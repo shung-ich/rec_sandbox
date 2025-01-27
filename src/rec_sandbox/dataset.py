@@ -1,4 +1,5 @@
 from torch.utils.data import Dataset, DataLoader
+import torch
 
 class MovieLensDataset(Dataset):
     def __init__(self, user_seq, max_len):
@@ -13,6 +14,8 @@ class MovieLensDataset(Dataset):
         # Padding
         seq = seq[-self.max_len:]
         seq = [0] * (self.max_len - len(seq)) + seq
-        target = seq[-1]
-        input_seq = seq[:-1]
-        return torch.tensor(input_seq, dtype=torch.long), torch.tensor(target, dtype=torch.long)
+        original_seq = seq[:-1]
+        shift_seq = seq[1:]
+        # target = seq[-i]
+        # input_seq = seq[:-i]
+        return torch.tensor(original_seq, dtype=torch.long), torch.tensor(shift_seq, dtype=torch.long)

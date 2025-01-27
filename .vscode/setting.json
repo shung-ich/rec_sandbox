@@ -1,3 +1,12 @@
 {
-    "python.pythonPath": ".venv/bin/python"
+    "python.pythonPath": ".venv/bin/python",
+    "python.analysis.extraPaths" : [
+        "src/rec_sandbox",
+        ".venv/lib/python3.12/site-packages/"
+    ],
+    "python.autoComplete.extraPaths": ["./src"],
+    "python.analysis.include": [
+        "src/rec_sandbox"
+    ],
+    "python.analysis.autoImportCompletions": true
 }

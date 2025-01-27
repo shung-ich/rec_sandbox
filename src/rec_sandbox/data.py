@@ -7,7 +7,7 @@ ratings_df = pd.read_csv(
     sep="::",
     engine="python",
     header=None,
-    names=["user_id", "movie_id", "rating", "timestamp"]
+    names=["uu_id", "movie_id", "rating", "timestamp"]
 )
 print(ratings_df.head())
 # import os
